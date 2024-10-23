@@ -1,0 +1,10 @@
+path: daneZRobota  # dataset root dir
+train: train
+val: val  
+
+# Classes
+names:
+  0: czlowiek
+  1: hulajnoga
+  2: samochod
+

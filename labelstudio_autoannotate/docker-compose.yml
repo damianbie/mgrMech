@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  labels_studio:
+    image: heartexlabs/label-studio:latest
+    ports: 
+      - 8080:8080
+    volumes:
+      - "labels_studio_config_vol:/label-studio/data/"
+      - "./data/images/:/datasets/images/"
+      - "./data/data_files/:/datasets/data_files/"
+    environment:
+      - LOCAL_FILES_SERVING_ENABLED=true
+      - LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED=true
+      - LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/datasets/
+
+volumes:
+  labels_studio_config_vol:
